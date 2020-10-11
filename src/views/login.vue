@@ -1,0 +1,138 @@
+<template>
+  <div>
+    <div class="title">
+      <img src="../../public/img/login_title.jpg" alt="">
+    </div>
+
+    <div class="logo">
+      <div class="wrap">
+        <img src="../../public/img/logo.png" alt="">
+        <p>点击上传头像</p>
+      </div>
+    </div>
+
+    <div class="form">
+      <div>
+        <span>账号：</span>
+        <input type="text" placeholder="请输入用户名">
+      </div>
+      
+      <div>
+        <span>密码：</span>
+        <input type="text" placeholder="请输入密码">
+      </div>
+    </div>
+
+    <div class="register">
+      <p>
+        <a href="">注册</a>
+      </p>
+      <p>
+        <a href="">忘记密码</a>
+      </p>
+    </div> 
+
+    <div class="btn">
+      <p>登录</p>
+      <!-- <button> -->
+        <img src="../../public/img/login_button.png" alt="">
+      <!-- </button> -->
+    </div>
+
+  </div>
+
+</template>
+
+<script>
+export default {
+  
+}
+</script>
+
+
+<style scoped>
+  .title img{
+    width: 100%;
+  }
+
+  .logo{
+    width: 100%;
+    height: 150px;
+    margin: 10px 0;
+    position: relative;
+  }
+  
+  .wrap{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .wrap img{
+    width: 40%;
+    margin-bottom: 10px;
+  }
+  .wrap p{
+    font-size: 14px;
+    color: #999;
+  }
+
+  .form{
+    text-align: center;
+  }
+  .form input{
+    width: 80%;
+    padding: 14px 14px 14px 80px;
+    margin-bottom: 20px;
+    border: 1px solid #d2d2d2;
+    border-radius: 24px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .form div{
+    position: relative;
+  }
+  .form span{
+    position: absolute;
+    top: 19%;
+    left: 17%;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .register{
+    margin: 20px auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+  .register p:nth-child(2n+1) a{
+    color: #307ff6;
+  }
+  .register p:nth-child(2n) a{
+    color: #999;
+  }
+
+  .btn{
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+  }
+  .btn img{
+    width: 100%;
+    /* box-shadow: 10px 10px 5px #0255c4; */
+  }
+  .btn p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 0.5rem;
+  
+  }
+</style>

@@ -14,12 +14,12 @@
     <div class="form">
       <div>
         <span>账号：</span>
-        <input type="text" placeholder="请输入用户名">
+        <input type="text" placeholder="请输入用户名" v-model="username">
       </div>
       
       <div>
         <span>密码：</span>
-        <input type="text" placeholder="请输入密码">
+        <input type="text" placeholder="请输入密码" v-model="password">
       </div>
     </div>
 
@@ -32,11 +32,9 @@
       </p>
     </div> 
 
-    <div class="btn">
+    <div class="btn" @click="check">
       <p>登录</p>
-      <!-- <button> -->
-        <img src="../../public/img/login_button.png" alt="">
-      <!-- </button> -->
+          <img src="../../public/img/login_button.png" alt="">
     </div>
 
   </div>
@@ -45,7 +43,22 @@
 
 <script>
 export default {
-  
+  data() {
+    return {
+      username:'',
+      password:'',
+    }
+  },
+  methods: {
+    check(){
+      if(this.username=='zc' & this.password=='12345'){
+        this.$router.push('/class')
+      }else{
+        this.$messagebox('错误提示','用户名或密码错误')
+      }
+      console.log(this.username,this.password)
+    }
+  }
 }
 </script>
 
@@ -90,6 +103,10 @@ export default {
     box-sizing: border-box;
     font-size: 14px;
   }
+  .form input:focus{
+    border: 1px solid #4cb1f9;
+    box-shadow: 2px 2px 10px rgba(76, 177, 249, 0.5);
+  }
   .form div{
     position: relative;
   }
@@ -122,6 +139,7 @@ export default {
   }
   .btn img{
     width: 100%;
+    cursor: pointer;
     /* box-shadow: 10px 10px 5px #0255c4; */
   }
   .btn p{

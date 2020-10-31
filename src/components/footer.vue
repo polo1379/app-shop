@@ -1,23 +1,18 @@
 <template>
-  <div>
+  <div class="footer">
     <mt-tabbar v-model="tabbar" fixed>
-      <mt-tab-item id="class">
-          <p class="iconfont icon-kechengguanli"></p>
-          课程   
+      <mt-tab-item id="index">
+          <p class="iconfont icon-icon_home"></p>
+          首页   
       </mt-tab-item>
 
-      <mt-tab-item id="sort">
-          <p class="iconfont icon-ziyuan"></p>
-          分类     
-      </mt-tab-item>
-
-      <mt-tab-item id="info">
-          <p class="iconfont icon-icon-"></p>
-          消息     
+      <mt-tab-item id="order">
+          <p class="iconfont icon-dingdan"></p>
+          订单     
       </mt-tab-item>
 
       <mt-tab-item id="me">
-          <p class="iconfont icon-wode"></p>
+          <p class="iconfont icon-wode1"></p>
           我的  
       </mt-tab-item>
 
@@ -25,18 +20,20 @@
   </div>
 </template>
 
-<style scoped>
-  .mint-tabbar{
+<style>
+
+  .footer .mint-tabbar{
     margin-bottom: -1px;
+    background: white;
   }
-  .mint-tabbar>.mint-tab-item{
+  .footer .mint-tabbar>.mint-tab-item{
     color: #999999;
   }
-  .mint-tabbar>.mint-tab-item.is-selected{
-    color: #6685fc;
+  .footer .mint-tabbar>.mint-tab-item.is-selected{
+    color: #05b3ff;
     /* background: none; */
   }
-  .iconfont{
+  .footer .iconfont{
     font-size: 20px;
     margin: 6px;
   }
@@ -49,26 +46,24 @@
 export default {
   data() {
     return {
-      tabbar:'class'
+      tabbar:'index',
     }
   },
+  props:['tab'],
   watch:{
     //监听底部选项卡,可以带有两个参数,参数1代表新值,参数2代表旧值
     tabbar(value){                                                   
-        if(value == 'class'){
-            this.$router.push('/').catch(e=>{});                    
+        if(value == 'index'){                             
+            this.$router.push('/').catch(e=>{});    
         }
-        if(value == 'sort'){
-            this.$router.push('/sort').catch(e=>{});                 
-        }
-        if(value == 'info'){
-            this.$router.push('/info').catch(e=>{});                 
+        if(value == 'order'){
+            this.$router.push('/order').catch(e=>{});          
         }
         if(value == 'me'){
-            this.$router.push('/me').catch(e=>{});                 
+            this.$router.push('/me').catch(e=>{});                           
         }
     }
-  }
 
+  }
 }
 </script>
